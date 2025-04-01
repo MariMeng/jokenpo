@@ -3,30 +3,32 @@
 <head>
   <title>Pedra, Papel e Tesoura</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
 </head>
 <body class="text-center mt-5">
 
-  <h1>Pedra, Papel ou Tesoura</h1>
+    <h1 class="tittle">Jokenpo</h1>
 
-  <div class="btn-group mt-3">
-    <button class="btn btn-primary" onclick="jogar('Pedra')">Pedra</button>
-    <button class="btn btn-success" onclick="jogar('Papel')">Papel</button>
-    <button class="btn btn-warning" onclick="jogar('Tesoura')">Tesoura</button>
-  </div>
+    <h4>Escolha um para começar</h4>
 
-  <div class="mt-4">
-    <p><strong>Sua jogada:</strong> <span id="jogada-usuario">-</span></p>
-    <p><strong>Jogada do PC:</strong> <span id="jogada-pc">-</span></p>
-    <p><strong>Resultado:</strong> <span id="resultado">-</span></p>
-  </div>
+    <div class="botoes-grupo">
+        <button class="btn btn-secondary" onclick="jogar('Pedra')">Pedra</button>
+        <button class="btn btn-secondary" onclick="jogar('Papel')">Papel</button>
+        <button class="btn btn-secondary" onclick="jogar('Tesoura')">Tesoura</button>
+    </div>
 
-  <div class="mt-4">
-    <p><strong>Pontuação:</strong></p>
-    <p>Você: <span id="pontos-usuario">0</span> | PC: <span id="pontos-pc">0</span></p>
-  </div>
+    <div class="mt-4">
+        <p><strong>Sua jogada:</strong> <span id="jogada-usuario">-</span></p>
+        <p><strong>Jogada do PC:</strong> <span id="jogada-pc">-</span></p>
+        <p><strong>Resultado:</strong> <span id="resultado">-</span></p>
+    </div>
 
-  <button class="btn btn-danger mt-3" onclick="reiniciarJogo()">Reiniciar Jogo</button>
+    <div class="mt-4">
+        <p><strong>Pontuação:</strong></p>
+        <p>Você: <span id="pontos-usuario">0</span> | PC: <span id="pontos-pc">0 </span> | Empates: <span id="pontos-empate">0</span></p>
+    </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

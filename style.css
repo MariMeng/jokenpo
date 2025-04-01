@@ -1,0 +1,13 @@
+.botoes-grupo {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.tittle {
+    background-color: rebeccapurple;
+    color: white;
+    padding: 20px;
+    margin-bottom: 10px;
+
+}
