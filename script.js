@@ -1,42 +1,42 @@
-let pontosUsuario = 0;
-let pontosPC = 0;
+let ptUsuario = 0;
+let ptPc = 0;
+let ptEmpate = 0;
 
 function jogar(jogadaUsuario) {
   const opcoes = ["Pedra", "Papel", "Tesoura"];
   const jogadaPC = opcoes[Math.floor(Math.random() * 3)];
 
-  // Atualiza jogadas
   document.getElementById("jogada-usuario").textContent = jogadaUsuario;
   document.getElementById("jogada-pc").textContent = jogadaPC;
 
+  const resultadoEl = document.getElementById("resultado");
   let resultado = "";
 
-  if (
-    (jogadaUsuario === "Pedra" && jogadaPC === "Tesoura") ||
+  if ( (jogadaUsuario === "Pedra" && jogadaPC === "Tesoura") ||
     (jogadaUsuario === "Papel" && jogadaPC === "Pedra") ||
     (jogadaUsuario === "Tesoura" && jogadaPC === "Papel")
   ) {
-    resultado = "Você ganhou!";
-    pontosUsuario++;
+    resultado = "[ Você ganhou! ]";
+    resultadoEl.style.color = "green";
+    resultadoEl.style.fontWeight = "bold";
+    ptUsuario++;
   } else if (jogadaUsuario === jogadaPC) {
-    resultado = "Empate!";
+    resultado = "[ Empate! ]";
+    resultadoEl.style.color = "gray";
+    resultadoEl.style.fontWeight = "bold";
+    ptEmpate++;
   } else {
-    resultado = "Você perdeu!";
-    pontosPC++;
+    resultado = "[ Você perdeu! ]";
+    resultadoEl.style.color = "red";
+    resultadoEl.style.fontWeight = "bold";
+    ptPc++;
   }
 
-  // Atualiza resultados e pontuação
+
   document.getElementById("resultado").textContent = resultado;
-  document.getElementById("pontos-usuario").textContent = pontosUsuario;
-  document.getElementById("pontos-pc").textContent = pontosPC;
+  document.getElementById("pontos-usuario").textContent = ptUsuario;
+  document.getElementById("pontos-pc").textContent = ptPc;
+  document.getElementById("pontos-empate").textContent = ptEmpate;
 }
 
-function reiniciarJogo() {
-  pontosUsuario = 0;
-  pontosPC = 0;
-  document.getElementById("jogada-usuario").textContent = "-";
-  document.getElementById("jogada-pc").textContent = "-";
-  document.getElementById("resultado").textContent = "-";
-  document.getElementById("pontos-usuario").textContent = "0";
-  document.getElementById("pontos-pc").textContent = "0";
-}
+
