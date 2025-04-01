@@ -9,6 +9,7 @@ function jogar(jogadaUsuario) {
   document.getElementById("jogada-usuario").textContent = jogadaUsuario;
   document.getElementById("jogada-pc").textContent = jogadaPC;
 
+  const resultadoEl = document.getElementById("resultado");
   let resultado = "";
 
   if (
@@ -16,12 +17,18 @@ function jogar(jogadaUsuario) {
     (jogadaUsuario === "Papel" && jogadaPC === "Pedra") ||
     (jogadaUsuario === "Tesoura" && jogadaPC === "Papel")
   ) {
-    resultado = "Você ganhou!";
+    resultado = "[ Você ganhou! ]";
+    resultadoEl.style.color = "green";
+    resultadoEl.style.fontWeight = "bold";
     pontosUsuario++;
   } else if (jogadaUsuario === jogadaPC) {
-    resultado = "Empate!";
+    resultado = "[ Empate! ]";
+    resultadoEl.style.color = "gray";
+    resultadoEl.style.fontWeight = "bold";
   } else {
-    resultado = "Você perdeu!";
+    resultado = "[ Você perdeu! ]";
+    resultadoEl.style.color = "red";
+    resultadoEl.style.fontWeight = "bold";
     pontosPC++;
   }
 
@@ -31,12 +38,4 @@ function jogar(jogadaUsuario) {
   document.getElementById("pontos-pc").textContent = pontosPC;
 }
 
-function reiniciarJogo() {
-  pontosUsuario = 0;
-  pontosPC = 0;
-  document.getElementById("jogada-usuario").textContent = "-";
-  document.getElementById("jogada-pc").textContent = "-";
-  document.getElementById("resultado").textContent = "-";
-  document.getElementById("pontos-usuario").textContent = "0";
-  document.getElementById("pontos-pc").textContent = "0";
-}
+
