@@ -18,12 +18,15 @@ function jogar(jogadaUsuario) {
   ) {
     alert("Você ganhou!");
     resultado = "[ Você ganhou! ]";
+
     resultadoEl.style.color = "green";
     resultadoEl.style.fontWeight = "bold";
     ptUsuario++;
+
   } else if (jogadaUsuario === jogadaPC) {
     alert("Empate com o PC!");
     resultado = "[ Empate! ]";
+    
     resultadoEl.style.color = "gray";
     resultadoEl.style.fontWeight = "bold";
     ptEmpate++;
